@@ -37,6 +37,9 @@ app.controller('productsCtrl', function ($scope, $modal, $filter, Data) {
             }
         });
     };
+    $scope.move = function (item) {
+
+    }
     
  $scope.columns = [
                     {text:"ID",predicate:"id",sortable:true,dataType:"number"},
