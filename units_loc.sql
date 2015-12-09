@@ -19,10 +19,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `units`
+-- Table structure for table `products`
 --
 
-CREATE TABLE IF NOT EXISTS `units` (
+CREATE TABLE IF NOT EXISTS `products` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `sku` int(50) NOT NULL,
   `name` varchar(100) NOT NULL,
@@ -38,10 +38,10 @@ CREATE TABLE IF NOT EXISTS `units` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=951 ;
 
 --
--- Dumping data for table `units`
+-- Dumping data for table `products`
 --
 
-INSERT INTO `units` (`id`, `sku`, `name`, `price`, `mrp`, `description`, `packing`, `image`, `category`, `stock`, `status`) VALUES
+INSERT INTO `products` (`id`, `sku`, `name`, `price`, `mrp`, `description`, `packing`, `image`, `category`, `stock`, `status`) VALUES
 (138, 5053, 'Aramusk Bath Soap For Men   ', 108, 108, '', '3 X 125 g ', 'aramusk-bath-soap-for-men-3-x-125-g.png', 140, 100, 'Active'),
 (248, 386, 'Adidas Deo Ice Dive Deo Body Spray   ', 199, 199, '', '150 ml ', 'adidas-adidas-body-deo-ice-dive-150-ml.png', 130, 20, 'Inactive'),
 (318, 6124, 'Baba Ramdev Patanjali Anti Bacterial Herbal Hand Wash Refill   ', 40, 40, '', '200 ml ', 'baba-ramdev-patanjali-anti-bacterial-herbal-hand-wash-refill-200-ml.png', 160, 50, 'Inactive'),

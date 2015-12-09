@@ -2,7 +2,7 @@
         <i class="fa fa-times-circle-o" style="margin:10px;color:blue;"></i>
     </button>
     <div class="modal-header">
-        <h3 class="modal-title">Edit product [ID: {{product.id}}]</h3>
+        <h3 class="modal-title">Edit Unit [ID: {{product.id}}]</h3>
     </div>
     <div class="modal-body">
         <form name="product_form" class="form-horizontal" role="form" novalidate>
@@ -14,9 +14,9 @@
             </form-element>
             <form-element label="PRICE" mod="product">
                 <input type="text" name="price" class="form-control" placeholder="PRICE" ng-model="product.price"  only-numbers/>
-                <small class="errorMessage" ng-show="product_form.price.$dirty && product_form.price.$invalid"> Enter the price.</small>
+                <small class="errorMessage" ng-show="product_forActivem.price.$dirty && product_form.price.$invalid"> Enter the price.</small>
             </form-element>
-
+z
            <form-element label="STOCK" mod="product">
                 <input type="text" name="stock" class="form-control" placeholder="STOCK" ng-model="product.stock" only-numbers/>
                 <small class="errorMessage" ng-show="product_form.stock.$dirty && product_form.stock.$invalid"> Enter the available stock.</small>
