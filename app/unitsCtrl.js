@@ -31,8 +31,8 @@ app.controller('productsCtrl', function ($scope, $modal, $filter, Data) {
                 $scope.products = $filter('orderBy')($scope.products, 'id', 'reverse');
             }else if(selectedObject.save == "update"){
                 p.description = selectedObject.description;
-                p.price = selectedObject.price;
-                p.stock = selectedObject.stock;
+                p.monitora = selectedObject.monitora;
+                p.monitorb = selectedObject.monitorb;
                 p.packing = selectedObject.packing;
             }
         });
@@ -43,10 +43,10 @@ app.controller('productsCtrl', function ($scope, $modal, $filter, Data) {
                     {text:"CPU",predicate:"name",sortable:true},
                     {text:"Monitor 1",predicate:"description",sortable:true},
                     {text:"Monitor 2",predicate:"description",sortable:true},
-                    /*{text:"Price",predicate:"price",sortable:true},*/
-                    /*{text:"Stock",predicate:"stock",sortable:true},*/
+                    /*{text:"monitora",predicate:"monitora",sortable:true},*/
+                    /*{text:"Stock",predicate:"monitorb",sortable:true},*/
                     /*{text:"Packing",predicate:"packing",reverse:true,sortable:true,dataType:"number"},*/
-                    {text:"Description",predicate:"description",sortable:true},
+                    {text:"Remarks",predicate:"description",sortable:true},
                     //{text:"Status",predicate:"status",sortable:true},
                     {text:"Action",predicate:"",sortable:false}
                 ];

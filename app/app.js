@@ -6,7 +6,7 @@ app.config(['$routeProvider',
     when('/', {
       title: 'Products',
       templateUrl: 'partials/products.html',
-      controller: 'unitsCtrl'
+      controller: 'productsCtrl'
     })
     .otherwise({
       redirectTo: '/'
