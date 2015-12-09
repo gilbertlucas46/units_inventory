@@ -2,16 +2,16 @@
         <i class="fa fa-times-circle-o" style="margin:10px;color:blue;"></i>
     </button>
     <div class="modal-header">
-        <h3 class="modal-title">Edit Unit [ID: {{product.id}}]</h3>
+        <h3 class="modal-title">Edit Unit [ID:{{product.id}}]</h3>
     </div>
     <div class="modal-body">
         <form name="product_form" class="form-horizontal" role="form" novalidate>
             <form-element label="NAME" mod="product">
                 <input type="text" class="form-control" name="name" placeholder="CPU NAME" ng-model="product.name" ng-disabled="product.id" focus/>
             </form-element>
-            <form-element label="DESCRIPTION" mod="product">
-            <textarea class="form-control" name="description" placeholder="DESCRIPTION" ng-model="product.description">{{product.description}}</textarea>
-            </form-element>
+            <!--<form-element label="DESCRIPTION" mod="product">-->
+            <!--<textarea class="form-control" name="description" placeholder="DESCRIPTION" ng-model="product.description">{{product.description}}</textarea>-->
+            <!--</form-element>-->
             <form-element label="Monitor 1" mod="product">
                 <input type="text" name="monitora" class="form-control" placeholder="Monitor 1" ng-model="product.monitora"  />
 
