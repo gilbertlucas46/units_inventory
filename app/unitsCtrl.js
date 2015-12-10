@@ -3,6 +3,7 @@ app.controller('productsCtrl', function ($scope, $modal, $filter, Data) {
     Data.get('products').then(function(data){
         $scope.products = data.data;
     });
+
     $scope.changeProductStatus = function(product){
         product.status = (product.status=="Active" ? "Inactive" : "Active");
         Data.put("products/"+product.id,{status:product.status});
@@ -37,9 +38,7 @@ app.controller('productsCtrl', function ($scope, $modal, $filter, Data) {
             }
         });
     };
-    $scope.move = function (item) {
 
-    }
     
  $scope.columns = [
                     {text:"ID",predicate:"id",sortable:true,dataType:"number"},
@@ -55,6 +54,7 @@ app.controller('productsCtrl', function ($scope, $modal, $filter, Data) {
                 ];
 
 });
+angular.bootstrap(document, ['myApp']);
 
 
 app.controller('productEditCtrl', function ($scope, $modalInstance, item, Data) {
