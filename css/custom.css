@@ -8,6 +8,9 @@ body{
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng.ng-cloak {
     display: none;
 }
+tr {
+  cursor: move;
+}
 .navbar-default {
  background-color: #fff; 
  border-color: #fff; 
