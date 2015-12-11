@@ -14,7 +14,7 @@
             </div>
         </div>
     </div>
-  <div class="panel-body">
+  <div class="panel-body" id="divTableDataHolder">
     <table class="table table-striped">
     <tr ng-show="products.length==0"><td style="vertical-align:middle;"><i class="fa fa-ban fa-3x"></i>&nbsp;No data found</td></tr>
     <tr ng-hide="products.length>-1"><td style="vertical-align:middle;"><i class="fa fa-cog fa-3x fa-spin"></i>&nbsp;Loading</td></tr>
@@ -39,6 +39,9 @@
     </tr>
     </table>
 </div>
+    <button type="button" id="myButtonControlID">
+export in excel
+    </button>
 </div>
 </div>
               
