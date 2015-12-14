@@ -1,4 +1,3 @@
-
 var app = angular.module('myApp', ['ngRoute', 'ui.bootstrap', 'ngAnimate', 'ui']);
 
 app.config(['$routeProvider',
@@ -19,7 +18,6 @@ app.controller('productsCtrl', function ($scope, $modal, $filter, Data) {
     $scope.products = data.data;
 
   });
-
 
   $scope.changeProductStatus = function(product){
     product.status = (product.status=="Active" ? "Inactive" : "Active");
@@ -71,7 +69,6 @@ app.controller('productsCtrl', function ($scope, $modal, $filter, Data) {
   ];
 
 });
-
 
 app.controller('productEditCtrl', function ($scope, $modalInstance, item, Data) {
 
