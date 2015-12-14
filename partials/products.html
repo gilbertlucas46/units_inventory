@@ -1,6 +1,5 @@
 <h1>Units Inventory</h1>
 <hr/>
-<button type="button" class="btn btn-danger fa fa-plus" ng-click="open(product);">&nbsp;Add New Unit</button>
 
 <div class="table-responsive">
 <div class="panel panel-primary">
@@ -14,34 +13,41 @@
             </div>
         </div>
     </div>
-  <div class="panel-body" id="divTableDataHolder">
-    <table class="table table-striped">
+  <div class="panel-body" id="divTableDataHolder" >
+    <table class="table table-striped" >
     <tr ng-show="products.length==0"><td style="vertical-align:middle;"><i class="fa fa-ban fa-3x"></i>&nbsp;No data found</td></tr>
     <tr ng-hide="products.length>-1"><td style="vertical-align:middle;"><i class="fa fa-cog fa-3x fa-spin"></i>&nbsp;Loading</td></tr>
     
     <tr><th ng-repeat="c in columns">{{c.text}}</th></tr>
-
+    <tbody  ui-sortable ng-model="product">
     <tr ng-repeat="c in products | filter:filterProduct | orderBy:'-id'" id="{{c.id}}" animate-on-change='c.packing + c.monitorb + c.monitora + c.description' ng-animate=" 'animate'">
         <td>{{c.id}}</td><td>{{c.name}}</td><td>{{c.monitora}}</td><td>{{c.monitorb}}</td><td>{{c.packing}}</td>
         <!--<td>-->
-            <!--<button class="btn" ng-class="{Active:'btn-success', Inactive:''}[c.status]" ng-click="changeProductStatus(c);">{{c.status}}</button>-->
+        <!--<button class="btn" ng-class="{Active:'btn-success', Inactive:''}[c.status]" ng-click="changeProductStatus(c);">{{c.status}}</button>-->
         <!--</td>-->
         <td style="width:150px">
             <div class="btn-group">
-              <button type="button" class="btn btn-default fa fa-edit" ng-click="open(c);"></button>
-              <button type="button" class="btn btn-danger fa fa-trash-o" ng-click="deleteProduct(c);"></button>
-                <button type="button" class="btn btn-move btn-default fa fa-navicon" ng-click="move(c);">
+                <button type="button" class="btn btn-default fa fa-edit" ng-click="open(c);"></button>
+                <button type="button" class="btn btn-danger fa fa-trash-o" ng-click="deleteProduct(c);"></button>
 
-                </button>
             </div>
+            <button type="button" class="btn btn-move btn-default fa fa-navicon" >
+
+            </button>
 
         </td>
+
     </tr>
+
+
     </table>
-</div>
-    <button type="button" id="myButtonControlID">
-export in excel
-    </button>
+      <button type="button" class="btn btn-danger">Save Changes</button>
+      <button type="button" class="btn btn-danger" ng-click="open(product);"><i class="fa fa-plus"></i> Add New </button>
+      <button type="button"  class="btn btn-info id="myButtonControlID">  export in excel</button>
+      </tbody>
+
+  </div>
+
 </div>
 </div>
               

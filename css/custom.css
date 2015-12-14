@@ -11,6 +11,21 @@ body{
 tr, .btn-move {
   cursor: move;
 }
+.ui-sortable-helper {
+  min-width: 200px;
+}
+.product, .placeholder {
+  padding: 2px;
+  width: 50px;
+  height: 20px;
+  border: 1px solid #333;
+  background: #EEE;
+}
+
+.placeholder {
+  background: #AEF;
+}
+
 
 .navbar-default {
  background-color: #fff; 

@@ -1,6 +1,5 @@
 app.factory("Data", ['$http', '$location',
     function ($http, $q, $location) {
-
         var serviceBase = 'api/v1/';
 
         var obj = {};
