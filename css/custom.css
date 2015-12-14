@@ -22,8 +22,29 @@ tr, .btn-move {
   background: #EEE;
 }
 
+.nav-search .nav-search-icon {
+  color: #de7621de7621 !important;
+  font-size: 14px !important;
+  line-height: 24px !important;
+  background-color: transparent;
+}
 .placeholder {
-  background: #AEF;
+  background: #de7621;
+}
+.panel-primary {
+  border-color: #de7621;
+}
+.panel-primary > .panel-heading {
+  background-color: #de7621;
+  border-color: #de7621;
+}
+.btn-danger {
+  border-color: #de7621;
+  background-color: #de7621;
+}
+.btn-info {
+  border-color: #565656 ;
+  background-color: #565656 ;
 }
 
 
@@ -143,12 +164,7 @@ display: inline-block;
 color: #909090;
 font-size: 16px;
 }
-.nav-search .nav-search-icon {
-color: #6fb3e0 !important;
-font-size: 14px !important;
-line-height: 24px !important;
-background-color: transparent;
-}
+
 .nav-search .nav-search-icon {
 border: none;
 border-radius: 0;

@@ -4,7 +4,7 @@ app.config(['$routeProvider',
     $routeProvider.
     when('/', {
       title: 'Products',
-      templateUrl: 'partials/products.html',
+      templateUrl: 'partials/units.html',
       controller: 'productsCtrl'
     })
     .otherwise({
@@ -26,13 +26,14 @@ app.controller('productsCtrl', function ($scope, $modal, $filter, Data) {
   $scope.deleteProduct = function(product){
     if(confirm("Are you sure to remove the product")){
       Data.delete("products/"+product.id).then(function(result){
-        $scope.products = _.without($scope.products, _.findWhere($scope.products, {id:product.id}));
+        $scope.products = _.without($scope.products,
+        dWhere($scope.products, {id:product.id}));
       });
     }
   };
   $scope.open = function (p,size) {
     var modalInstance = $modal.open({
-      templateUrl: 'partials/productEdit.html',
+      templateUrl: 'partials/unitsEdit.html',
       controller: 'productEditCtrl',
       size: size,
       resolve: {
