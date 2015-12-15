@@ -7,7 +7,7 @@
         <div class="panel-heading">List of Units
             <div class="sw-search" >
                 <div class="nav-search" id="nav-search">
-                    Filter: <span class="input-icon">
+                    Search: <span class="input-icon">
                         <input placeholder="Filter products list ..." class="nav-search-input" ng-model="filterProduct" ng-change="resetLimit();"  autocomplete="off" type="text" style="width:300px;" focus>
                         <i class="search-icon fa fa-search nav-search-icon"></i>
                     </span>
@@ -15,29 +15,24 @@
             </div>
         </div>
         <div class="panel-body" id="divTableDataHolder" >
-            <table class="table table-striped" >
+            <table class="table table-striped " >
                 <tr ng-show="products.length==0"><td style="vertical-align:middle;"><i class="fa fa-ban fa-3x"></i>&nbsp;No data found</td></tr>
                 <tr ng-hide="products.length>-1"><td style="vertical-align:middle;"><i class="fa fa-cog fa-3x fa-spin"></i>&nbsp;Loading</td></tr>
 
                 <tr><th ng-repeat="c in columns">{{c.text}}</th></tr>
                 <tbody  ui-sortable ng-model="product">
-                <tr ng-repeat="c in products | filter:filterProduct | orderBy:'-id'" id="{{c.id}}" animate-on-change='c.packing + c.monitorb + c.monitora + c.description' ng-animate=" 'animate'">
-                    <td>{{c.id}}</td><td>{{c.name}}</td><td>{{c.monitora}}</td><td>{{c.monitorb}}</td><td>{{c.packing}}</td>
+                <tr  ng-repeat="c in products | filter:filterProduct | orderBy:'-id'" id="{{c.id}}" animate-on-change='c.packing + c.monitorb + c.monitora + c.description' ng-animate=" 'animate'">
+                    <td class="sortable">{{c.id}}</td><td>{{c.name}}</td><td>{{c.monitora}}</td><td>{{c.monitorb}}</td><td>{{c.packing}}</td>
                     <!--<td>-->
-                    <!--<button class="btn" ng-class="{Active:'btn-success', Inactive:''}[c.status]" ng-click="changeProductStatus(c);">{{c.status}}</button>-->
+                    <!--<button class="btn" ng-class="{Active:'btn-success', Inactive:''}[c.status]" ng-click="changePosition(c);">{{c.status}}</button>-->
                     <!--</td>-->
-                    <td style="width:150px">
+                    <td style="width:150px" class="crud-ctrl">
                         <div class="btn-group">
                             <button type="button" class="btn btn-default fa fa-edit" ng-click="open(c);"></button>
                             <button type="button" class="btn btn-danger fa fa-trash-o" ng-click="deleteProduct(c);"></button>
-
+                            <i class="fa fa-navicon"></i>
                         </div>
-                        <button type="button" class="btn btn-move btn-default fa fa-navicon" >
-
-                        </button>
-
                     </td>
-
                 </tr>
 
 
@@ -47,9 +42,19 @@
             <button type="button"  class="btn btn-info" id="myButtonControlID">  export in excel</button>
             </tbody>
             <script>
+                // exporttables onclick
                 $("#myButtonControlID").click(function(e) {
                     window.open('data:application/vnd.ms-excel,' + encodeURIComponent( $('div[id$=divTableDataHolder]').html()));
                     e.preventDefault();
+                });
+                //drag handles
+                $( "#divTableDataHolder" ).sortable({ handle: '.handle' });
+
+                //fix table rows on drag
+                $(document).ready(function(){
+                    $('td').each(function(){
+                        $(this).css('width', $(this).width() +'px');
+                    });
                 });
             </script>
 

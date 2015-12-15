@@ -11,8 +11,14 @@ body{
 tr, .btn-move {
   cursor: move;
 }
-.ui-sortable-helper {
-  min-width: 200px;
+#divTableDataHolder tbody .fa {
+  margin-left: 10px;
+  padding-top: 8px;
+}
+.crud-ctrl {
+  .fa-navicon {
+  margin-left: 30px;
+}
 }
 .product, .placeholder {
   padding: 2px;
@@ -23,7 +29,7 @@ tr, .btn-move {
 }
 
 .nav-search .nav-search-icon {
-  color: #de7621de7621 !important;
+  color: #de7621 !important;
   font-size: 14px !important;
   line-height: 24px !important;
   background-color: transparent;
